@@ -60,7 +60,7 @@ public class HomeViewModel extends ViewModel {
 
     public void getAlbums(){
 
-        compositeDisposable.add(albumRepository.getAlbumResults()
+        compositeDisposable.add(albumRepository.getRepoFromResults()
 
                 .subscribeOn(Schedulers.io())
 

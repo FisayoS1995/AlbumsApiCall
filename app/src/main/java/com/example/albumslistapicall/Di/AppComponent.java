@@ -10,24 +10,25 @@ import retrofit2.Retrofit;
 public class App extends Application {
     AlbumsListService albumsListService;
 
-    AppComponent appComponent;
+    App app;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent = DaggerAppComponent.builder()
+        app = DaggerAppComponent.builder()
                 .appModule(new AppModule())
                 .build();
     }
 
     public AlbumsListService albumsListService(Gson gson, Retrofit retrofit) {
-        return appComponent.getAlbumsListService();
+        return app.getAlbumsListService();
     }
 
 
 
-    public AppComponent getAppComponent() {
-        return appComponent;
+
+    public App getApp() {
+        return app;
     }
 }
 
